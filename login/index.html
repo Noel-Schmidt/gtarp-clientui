@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="login">
+    <div class="login-container">
+        <h1 class="title">Server Login</h1>
+        <form class="login-form">
+            <div class="form-group">
+                <input class="form-item" type="text" id="username" placeholder="Benutzername" value=""><br>
+            </div>
+
+            <div class="form-group">
+                <input class="form-item" type="password" id="password" placeholder="Passwort" value=""><br>
+            </div>
+
+            <div class="form-group">
+                <button class="form-btn" type="button" id="submit" value="Einloggen">Einloggen</button>
+            </div>
+        </form>
+    </div>
+    <a class="forgot-password" href="">Password vergessen?</a>
+
+    <div class="left-bottom-corner"></div>
+    <div class="right-top-corner"></div>
+</div>
+
+<script src="../assets/js/sweetalert.js"></script>
+<script>
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+
+    document.getElementById('submit').addEventListener("click", () => {
+        let username = document.getElementById('username').value
+        let password = document.getElementById('password').value
+
+        if(username == '' || password == '') {
+            Toast.fire({
+                icon: 'info',
+                title: 'Bitte fülle alle Felder aus!'
+            })
+            return
+        }
+
+        Toast.fire({
+            icon: 'info',
+            title: 'Daten werden überprüft!'
+        })
+        alt.emit('authForm:check', username, password)
+    })
+
+    alt.on('authForm:error', () => {
+        Toast.fire({
+            icon: 'error',
+            title: 'Benutzername oder Passwort falsch!'
+        })
+    })
+
+</script>
+</body>
+</html>
