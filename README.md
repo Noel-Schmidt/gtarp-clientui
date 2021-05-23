@@ -21,4 +21,5 @@ This project is fully usable for everyone, please note the license terms and the
 <img src="./screenshots/entry_preview.png" alt="Entry Preview">
 
 <hr>
+
 Licence: Apache 2.0 Licence
