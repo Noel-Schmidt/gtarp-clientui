@@ -7,12 +7,14 @@ This project is fully usable for everyone, please note the license terms and the
 
 <h2>Feature list</h2>
 
-- Login 
-- Character Creator
-- Skin Creator <small style="color: red;">soon</small>
-- Bank <small style="color: red;">soon</small>
-- Phone <small style="color: red;">soon</small>
-- Inventory <small style="color: red;">soon</small>
+- [x] Login 
+- [x] First entry
+- [ ] Character Creator
+- [ ] Skin Creator
+- [ ] Bank
+- [ ] Phone
+- [ ] Inventory
+- [ ] Client HUD
 
 <h2>Preview</h2>
 <img src="./screenshots/login_preview.png" alt="Login Preview"><br>
